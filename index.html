@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Tic Tac Toe | Fun for All Ages</title>
+    <meta name="description" content="Play the classic Tic Tac Toe game with awesome effects and features!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="x-color">Tic</span> <span class="o-color">Tac</span> <span class="x-color">Toe</span> <span class="fun-text">Fun!</span></h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <div class="game-controls">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="player">Player vs Player</button>
+                <button class="mode-btn" data-mode="ai">Player vs AI</button>
+            </div>
+            
+            <div class="difficulty-selector" id="difficulty-container">
+                <label for="difficulty">AI Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="player-info x-turn">
+                <div class="player-icon x-color"><i class="fas fa-times"></i></div>
+                <div class="player-name">Player X</div>
+                <div class="player-score" id="x-score">0</div>
+            </div>
+            
+            <div class="game-board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <div class="player-info">
+                <div class="player-icon o-color"><i class="far fa-circle"></i></div>
+                <div class="player-name">Player O</div>
+                <div class="player-score" id="o-score">0</div>
+            </div>
+        </div>
+
+        <div class="game-status">
+            <div id="status-message">Player X's Turn</div>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-label">X Wins:</span> <span id="x-wins">0</span></div>
+                <div class="stat-item"><span class="stat-label">O Wins:</span> <span id="o-wins">0</span></div>
+                <div class="stat-item"><span class="stat-label">Draws:</span> <span id="draws">0</span></div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="new-game-btn" class="btn pulse"><i class="fas fa-redo"></i> New Game</button>
+            <button id="reset-score-btn" class="btn"><i class="fas fa-trash-alt"></i> Reset Scores</button>
+        </div>
+
+        <div class="effects-toggle">
+            <label class="switch-container">
+                <span>Special Effects:</span>
+                <label class="switch">
+                    <input type="checkbox" id="effects-switch" checked>
+                    <span class="slider round"></span>
+                </label>
+            </label>
+        </div>
+
+        <footer>
+            <div class="sound-control">
+                <button id="sound-btn" class="btn-icon"><i class="fas fa-volume-up"></i></button>
+            </div>
+            <div class="footer-text">
+                Made with <i class="fas fa-heart heart-beat"></i> for game lovers!
+            </div>
+        </footer>
+    </div>
+
+    <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+    <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="draw-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-lose-2027.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
